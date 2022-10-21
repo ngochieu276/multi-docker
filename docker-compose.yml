@@ -1,11 +1,11 @@
 version: "3"
 services:
   client:
-    image: "ngochieu276/multi-client"
+    image: "ngochieu276/multi-client-10-14"
     mem_limit: 128m
     hostname: client
   server:
-    image: "ngochieu276/multi-server"
+    image: "ngochieu276/multi-server-10-14"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "ngochieu276/multi-worker"
+    image: "ngochieu276/multi-worker-10-14"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "ngochieu276/multi-nginx"
+    image: "ngochieu276/multi-nginx-10-14"
     mem_limit: 128m
     hostname: nginx
     ports:
